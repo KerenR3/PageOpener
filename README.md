@@ -15,7 +15,7 @@ All the web pages will be opened in the same window.
 ```batch
     python VPE_script.py 130 "http://alinkname.com?QueryParameter="
 ```
-    the urls http://alinkname.com?QueryParameter=0, http://alinkname.com?QueryParameter=50, and http://alinkname.com?QueryParameter=100 will then be opened.
+the urls http://alinkname.com?QueryParameter=0, http://alinkname.com?QueryParameter=50, and http://alinkname.com?QueryParameter=100 will then be opened.
 
 ## Notes
 For all non-Windows operating systems or Windows without Chrome, the links will open in the most recently used browser window. For Windows (if Chrome is installed), a new chrome window will be opened with a tab per link.
