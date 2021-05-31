@@ -3,23 +3,25 @@ import webbrowser
 import os
 import platform
 
-#uses two commandline arugments (the url name and the max id number at the end of thel ink) 
-#to run the open_file method
+#A program which opens a series of webpages which have urls that differ only in the last query parameter. This parameter is an integer which starts
+# at 0 and is incremented by 50 until the value specified by the user is reached. All the webpages are opened in the same browser window.
+
+#The program uses two command-line arguments (the common part of the url and the max value of the integer at the end of the link) 
 def main():
-    if (len(sys.argv) != 3): #sys.argv returns an array of the commandline arguments
+    if (len(sys.argv) != 3): #The program expects to receive two arguments
         print("usage: VPE_script.py <ID> \"<link>\"")
     else:
-        #sys.argv[1] is the link url and sys.argv[1] is the maximum ID at the end of the link
+        #sys.argv[1] is the link url and sys.argv[2] is the maximum value of the integer at the end of the link
         open_file(sys.argv[2],sys.argv[1])
 
 
-#Runs a loop which opens a webpege with the ID at the end of the link starting at 0 and incremening by 50 until the ID specified by the user is reached
+#Runs a loop which opens all the webpage
 def open_file(link, max_id):
     if (platform.system() == "Windows"):
-        os.system("start chrome") #opens a new chrome window (on Windows) which all the other links will be opened in
+        os.system("start chrome") #opens a new chrome window (on Windows) in which all the other links will appear
     count =0
     for i in range(0,int(max_id), 50):
-      webbrowser.open("{}{}".format(link, i)) #method that opens a web page in the default browser
+      webbrowser.open("{}{}".format(link, i)) #Opens a web page in the default browser
       count += 1
     if (count < 2):
         print(str(count) + " page has been opened")
